@@ -5,11 +5,12 @@ import "github.com/jmoiron/sqlx"
 const (
 	urlTable = "urls"
 	longUrl  = "long_url"
+	shortUrl = "sort_url"
 )
 
 type URL interface {
-	SaveUrl(shortUrl, longUrls string) error
-	GetLongUrl(shortUrl string) (string, error)
+	SaveUrl(sUrl, lUrls string) error
+	GetLongUrl(sUrl string) (string, error)
 }
 
 type Repository struct {

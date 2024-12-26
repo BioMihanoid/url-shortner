@@ -1,5 +1,7 @@
 package config
 
+import "github.com/spf13/viper"
+
 type Config struct {
 	Host     string
 	Port     string
@@ -10,5 +12,8 @@ type Config struct {
 }
 
 func InitConfig() error {
-	return nil
+	viper.AddConfigPath("configs")
+	viper.SetConfigName("config")
+	viper.SetConfigType("yaml")
+	return viper.ReadInConfig()
 }
