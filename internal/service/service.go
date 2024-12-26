@@ -3,7 +3,7 @@ package service
 import "github.com/BioMihanoid/url-shortner/internal/repository"
 
 type URL interface {
-	SaveUrl(sUrl, lUrls string) error
+	SaveUrl(lUrls string) (string, error)
 	GetLongUrl(sUrl string) (string, error)
 }
 

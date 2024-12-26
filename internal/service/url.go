@@ -10,8 +10,10 @@ func newUrlService(repo repository.URL) *urlService {
 	return &urlService{repo: repo}
 }
 
-func (s *urlService) SaveUrl(sUrl, lUrl string) error {
-	return s.repo.SaveUrl(sUrl, lUrl)
+func (s *urlService) SaveUrl(lUrl string) (string, error) {
+	//TODO needed do short ulr
+	sUrl := "test"
+	return sUrl, s.repo.SaveUrl(sUrl, lUrl)
 }
 
 func (s *urlService) GetLongUrl(sUrl string) (string, error) {
